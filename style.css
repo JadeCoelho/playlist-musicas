@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+:root {
+  --bg: #facccc;
+  --rosa: #fca0a0;
+  --rosa-claro: #ffdada;
+  --rosa-escuro: #fa6670;
+  --branco: #fef3f3;
+  --sombra-clara: #fec8c8;
+  --sombra-escura: #fc8b8b;
+  --rosinha: #f8bbbb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Share Tech Mono", monospace;
+  list-style: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+}
+
+#musica {
+  width: 300px;
+  height: fit-content;
+  box-shadow: 0px 2px 30px var(--branco);
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--sombra-clara);
+}
+
+* i {
+  cursor: pointer;
+}
+
+.progresso-musica .tempo-musica,
+.controle-musica,
+.header-musica,
+.lista-musica li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topo-musica {
+  text-align: center;
+  margin: 10px 0 15px 0;
+  font-size: 19px;
+  color: var(--branco);
+  cursor: default;
+}
+
+.img-musica {
+  height: 200px;
+  min-width: 100%;
+  box-shadow: 0px 0px 5px var(--sombra-escura);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.img-musica img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.9;
+}
+
+.info-musica {
+  text-align: center;
+  margin: 10px 0;
+  color: var(--rosa-escuro);
+}
+
+.info-musica .nome {
+  font-size: 19px;
+  margin-bottom: 3px;
+}
+
+.info-musica .artista {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.progresso-musica {
+  height: 6px;
+  width: 100%;
+  background-color: var(--rosa-claro);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.progresso-musica .progresso-barra {
+  height: inherit;
+  width: 0%;
+  position: relative;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--rosinha), var(--sombra-escura));
+}
+
+.progresso-barra::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  border-radius: inherit;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  background: var(--sombra-escura);
+  opacity: 0;
+}
+
+.progresso-musica:hover .progresso-barra::before {
+  opacity: 1;
+}
+
+.progresso-musica .tempo-musica {
+  font-size: 13px;
+  color: var(--sombra-escura);
+  margin-top: 6px;
+}
+
+.controle-musica {
+  margin: 40px 0 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controle-musica i {
+  font-size: 23px;
+  user-select: none;
+  color: var(--sombra-escura);
+}
+
+.controle-musica i:nth-child(2),
+.controle-musica i:nth-child(4) {
+  font-size: 34px;
+}
+
+.controle-musica #anterior {
+  margin-right: -10px;
+}
+
+.controle-musica #proxima {
+  margin-left: -10px;
+}
+
+.play-pause {
+  height: 50px;
+  width: 50px;
+  box-shadow: 0px 0px 3px var(--sombra-escura);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--rosa-claro);
+}
+
+.play-pause::before {
+  content: "";
+  position: absolute;
+  height: 43px;
+  width: 43px;
+  border-radius: inherit;
+  background: var(--sombra-escura);
+}
+
+.play-pause i {
+  font-size: 30px;
+  line-height: 43px;
+  text-align: center;
+  color: var(--rosa-claro);
+  position: absolute;
+}
+
+.lista-musica {
+  position: absolute;
+  left: 0;
+  border-radius: 15px;
+  box-shadow: 0 -2px 4px var(--rosa);
+  background-color: var(--bg);
+  width: 100%;
+  padding: 15px 30px;
+  bottom: -55%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.lista-musica.mostrar {
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lista-musica .header-musica {
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  color: var(--sombra-escura);
+}
+
+.header-musica #fechar {
+  font-size: 22px;
+}
+
+.lista-musica ul {
+  margin: 10px 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.lista-musica ul::-webkit-scrollbar {
+  width: 0px;
+}
+
+.lista-musica ul li {
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rosa);
+  color: var(--sombra-escura);
+}
+
+.lista-musica ul li:last-child {
+  border-bottom: 0;
+}
+
+.lista-musica ul li .linha-musica span {
+  font-size: 17px;
+}
+
+ul li .audio-duracao {
+  font-size: 16px;
+}
+
+ul li.tocando {
+  color: var(--rosa-escuro);
+  pointer-events: none;
+}

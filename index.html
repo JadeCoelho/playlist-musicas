@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Músicas</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="musica">
+      <div class="topo-musica">
+        <span class="material-icons"> equalizer </span>
+      </div>
+
+      <div class="img-musica">
+        <img src="" alt="" />
+      </div>
+      <div class="info-musica">
+        <p class="nome"></p>
+        <p class="artista"></p>
+      </div>
+
+      <div class="progresso-musica">
+        <div class="progresso-barra">
+          <audio src="" id="audio-principal"></audio>
+        </div>
+        <div class="tempo-musica">
+          <span class="atual"></span>
+          <span class="final"></span>
+        </div>
+      </div>
+
+      <div class="controle-musica">
+        <i id="repetir" class="material-icons" title="Playlist em loop"
+          >repeat</i
+        >
+        <i id="anterior" class="material-icons">skip_previous</i>
+        <div class="play-pause">
+          <i class="material-icons tocar">play_arrow</i>
+        </div>
+        <i id="proxima" class="material-icons">skip_next</i>
+        <i id="mais-musica" class="material-icons">queue_music</i>
+      </div>
+
+      <div class="lista-musica">
+        <div class="header-musica">
+          <span>Playlist</span>
+
+          <i id="fechar" class="material-icons">close</i>
+        </div>
+
+        <ul></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
